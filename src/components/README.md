@@ -40,7 +40,7 @@ math: {
 
 ### demo
 
-[demo]: https://liuhaifengzzzzz.github.io/number-roll	"demo"
+https://liuhaifengzzzzz.github.io/number-roll
 
 ```vue
 <number-roll
