@@ -1,0 +1,28 @@
+{
+  "name": "number-flip",
+  "version": "1.0.0",
+  "description": "数字轮播",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yaodao",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LIUHAIFENGzzzzz/number-roll.git"
+  },
+  "keywords": [
+    "vue",
+    "number",
+    "roll",
+    "flip",
+    "数字",
+    "滚动",
+    "轮播"
+  ],
+  "bugs": {
+    "url": "https://github.com/LIUHAIFENGzzzzz/number-roll/issues"
+  },
+  "homepage": "https://liuhaifengzzzzz.github.io/number-roll/"
+}

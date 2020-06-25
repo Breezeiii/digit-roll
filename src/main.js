@@ -5,7 +5,7 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 
-import NumberRoll from "@/components/number-roll";
+import NumberRoll from "@/components";
 Vue.use(NumberRoll);
 
 new Vue({

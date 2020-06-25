@@ -8,8 +8,9 @@
             v-model="$data[key].value"
             :duration="$data[key].duration"
             :delay="$data[key].delay"
-          ></number-roll
-          ><span class="unit">
+          >
+          </number-roll>
+          <span class="unit">
             {{ $data[key].unit }}
           </span>
         </div>
@@ -19,12 +20,12 @@
 </template>
 
 <script>
-import numberRoll from "@/components/number-roll";
+// import numberRoll from "@/components/number-roll";
 
 export default {
   name: "demo",
   components: {
-    numberRoll,
+    // numberRoll,
   },
   data() {
     return {
@@ -99,7 +100,7 @@ $radix: 6px;
 
     .unit {
       vertical-align: middle;
-      display:inline-block;
+      display: inline-block;
     }
 
     $colors: blue, #000, green, #f00, gray, #444, #faf, #f77;
