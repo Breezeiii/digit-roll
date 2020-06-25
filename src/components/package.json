@@ -13,10 +13,11 @@
     "url": "git+https://github.com/LIUHAIFENGzzzzz/number-roll.git"
   },
   "keywords": [
-    "vue",
+    "digit",
     "number",
     "roll",
     "flip",
+    "vue",
     "数字",
     "滚动",
     "轮播"
