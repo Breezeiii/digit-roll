@@ -1,7 +1,7 @@
-import NumberRoll from "./number-roll";
+import DigitRoll from "./digit-roll";
 
 export default {
-  install: (Vue) => Vue.component(NumberRoll.name, NumberRoll),
+  install: (Vue) => Vue.component(DigitRoll.name, DigitRoll),
 };
 
-export { NumberRoll };
+export { DigitRoll };

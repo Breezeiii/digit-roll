@@ -1,21 +1,21 @@
 <template>
-  <span class="nr">
+  <span class="dr">
     <template v-for="(item, index) in valueFormat">
-      <span class="nr-item" :key="index">
+      <span class="dr-item" :key="index">
         <span
           :class="[
             /\d+/.test(item)
-              ? 'nr-spacer'
+              ? 'dr-spacer'
               : item == '.'
-              ? 'nr-radix-mark'
-              : 'nr-formatting-mark',
+              ? 'dr-radix-mark'
+              : 'dr-formatting-mark',
           ]"
         >
           {{ item }}
         </span>
         <template v-if="/\d+/.test(item)">
           <span
-            class="nr-scroll"
+            class="dr-scroll"
             :style="{
               transform: 'translateY(' + -item * 10 + '%)',
               transitionDuration: getTime(duration),
@@ -24,7 +24,7 @@
             }"
           >
             <span
-              class="nr-scroll-item"
+              class="dr-scroll-item"
               v-for="(_item, _index) in 10"
               :key="_index"
             >
@@ -42,7 +42,7 @@ let DIGIT_FORMAT = "(,ddd).dd";
 let FORMAT_PARSER = /^\(?([^)]*)\)?(?:(.)(d+))?$/;
 
 export default {
-  name: "number-roll",
+  name: "digit-roll",
   model: {
     prop: "value",
     event: "change",
@@ -158,7 +158,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$prefix: nr;
+$prefix: dr;
 
 .#{$prefix} {
   display: inline-flex;

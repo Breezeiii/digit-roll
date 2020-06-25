@@ -4,12 +4,12 @@
     <div>
       <template v-for="(item, key) in $data">
         <div class="demo-item" :key="key">
-          <number-roll
+          <digit-roll
             v-model="$data[key].value"
             :duration="$data[key].duration"
             :delay="$data[key].delay"
           >
-          </number-roll>
+          </digit-roll>
           <span class="unit">
             {{ $data[key].unit }}
           </span>
