@@ -1,6 +1,6 @@
 {
   "name": "digit-roll",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "数字轮播，css动画，简单、轻量。",
   "main": "index.js",
   "scripts": {
