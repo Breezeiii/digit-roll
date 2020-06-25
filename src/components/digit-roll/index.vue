@@ -42,7 +42,7 @@ let DIGIT_FORMAT = "(,ddd).dd";
 let FORMAT_PARSER = /^\(?([^)]*)\)?(?:(.)(d+))?$/;
 
 export default {
-  name: "digit-roll",
+  name: "number-roll",
   model: {
     prop: "value",
     event: "change",
