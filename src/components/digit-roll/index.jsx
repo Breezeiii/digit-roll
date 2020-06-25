@@ -1,47 +1,8 @@
-<template>
-  <span class="dr">
-    <template v-for="(item, index) in valueFormat">
-      <span class="dr-item" :key="index">
-        <span
-          :class="[
-            /\d+/.test(item)
-              ? 'dr-spacer'
-              : item == '.'
-              ? 'dr-radix-mark'
-              : 'dr-formatting-mark',
-          ]"
-        >
-          {{ item }}
-        </span>
-        <template v-if="/\d+/.test(item)">
-          <span
-            class="dr-scroll"
-            :style="{
-              transform: 'translateY(' + -item * 10 + '%)',
-              transitionDuration: getTime(duration),
-              transitionDelay: getTime(delay),
-              transitionTimingFunction: easing,
-            }"
-          >
-            <span
-              class="dr-scroll-item"
-              v-for="(_item, _index) in 10"
-              :key="_index"
-            >
-              {{ _index }}
-            </span>
-          </span>
-        </template>
-      </span>
-    </template>
-  </span>
-</template>
-
-<script>
+let PREFIX = "dr";
 let DIGIT_FORMAT = "(,ddd).dd";
 let FORMAT_PARSER = /^\(?([^)]*)\)?(?:(.)(d+))?$/;
 
-export default {
+var DigitRoll = {
   name: "digit-roll",
   model: {
     prop: "value",
@@ -154,31 +115,52 @@ export default {
       };
     },
   },
+  render() {
+    const REGEXP = /\d+/;
+    let scrollItem = [];
+    for (var i = 0; i < 10; i++) {
+      scrollItem.push(<span class={PREFIX + "-scroll-item"}> {i} </span>);
+    }
+
+    return (
+      <span class={PREFIX}>
+        {this.valueFormat.map((item) => {
+          return (
+            <span class={PREFIX + "-item"}>
+              <span
+                class={
+                  REGEXP.test(item)
+                    ? PREFIX + "-spacer"
+                    : item == "."
+                    ? PREFIX + "-radix-mark"
+                    : PREFIX + "formatting-mark"
+                }
+              >
+                {item}
+              </span>
+              {REGEXP.test(item) ? (
+                <span
+                  class={PREFIX + "-scroll"}
+                  style={{
+                    transform: "translateY(" + -item * 10 + "%)",
+                    transitionDuration: this.getTime(this.duration),
+                    transitionDelay: this.getTime(this.delay),
+                    transitionTimingFunction: this.easing,
+                  }}
+                >
+                  {scrollItem}
+                </span>
+              ) : null}
+            </span>
+          );
+        })}
+      </span>
+    );
+  },
 };
-</script>
 
-<style scoped lang="scss">
-$prefix: dr;
+DigitRoll.install = function(Vue) {
+  Vue.component(DigitRoll.name, DigitRoll);
+};
 
-.#{$prefix} {
-  display: inline-flex;
-  .#{$prefix}-item {
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-
-    .#{$prefix}-spacer {
-      opacity: 0;
-      visibility: visible;
-    }
-
-    .#{$prefix}-scroll {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition-property: all;
-      transform: translateY(0);
-    }
-  }
-}
-</style>
+export default DigitRoll;

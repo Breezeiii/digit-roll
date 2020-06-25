@@ -1,0 +1,23 @@
+$prefix: dr;
+
+.#{$prefix} {
+  display: inline-flex;
+  .#{$prefix}-item {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+
+    .#{$prefix}-spacer {
+      opacity: 0;
+      visibility: visible;
+    }
+
+    .#{$prefix}-scroll {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition-property: all;
+      transform: translateY(0);
+    }
+  }
+}
