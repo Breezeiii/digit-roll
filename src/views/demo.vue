@@ -20,7 +20,7 @@
 </template>
 
 <script>
-// import numberRoll from "@/components/number-roll";
+// import numberRoll from "@/components/digit-roll";
 
 export default {
   name: "demo",

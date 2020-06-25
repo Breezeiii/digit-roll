@@ -10,7 +10,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LIUHAIFENGzzzzz/number-roll.git"
+    "url": "git+https://github.com/LIUHAIFENGzzzzz/digit-roll"
   },
   "keywords": [
     "digit",
@@ -23,7 +23,7 @@
     "轮播"
   ],
   "bugs": {
-    "url": "https://github.com/LIUHAIFENGzzzzz/number-roll/issues"
+    "url": "https://github.com/LIUHAIFENGzzzzz/digit-roll/issues"
   },
-  "homepage": "https://liuhaifengzzzzz.github.io/number-roll/"
+  "homepage": "https://github.com/LIUHAIFENGzzzzz/digit-roll"
 }

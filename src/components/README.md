@@ -1,4 +1,4 @@
-### number-roll
+### digit-roll
 
 数字滚动组件，轻量级。
 
@@ -40,14 +40,14 @@ math: {
 
 ### demo
 
-https://liuhaifengzzzzz.github.io/number-roll
+https://liuhaifengzzzzz.github.io/digit-roll
 
 ```vue
-<number-roll
+<digit-roll
     v-model="1111"
     :duration="1000"
     :delay="1000"
     >
-</number-roll>
+</digit-roll>
 ```
 
