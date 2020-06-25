@@ -1,5 +1,3 @@
-# number-roll
-
 ### number-roll
 
 数字滚动组件，轻量级。
@@ -40,7 +38,9 @@ math: {
 },
 ```
 
-[demo]: https://liuhaifengzzzzz.github.io/number-roll/
+### demo
+
+[demo]: https://liuhaifengzzzzz.github.io/number-roll	"demo"
 
 ```vue
 <number-roll
@@ -50,6 +50,8 @@ math: {
     >
 </number-roll>
 ```
+
+
 
 ## Project setup
 ```

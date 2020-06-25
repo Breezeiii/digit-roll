@@ -38,7 +38,9 @@ math: {
 },
 ```
 
-[demo]: https://liuhaifengzzzzz.github.io/number-roll/	"demo"
+### demo
+
+[demo]: https://liuhaifengzzzzz.github.io/number-roll	"demo"
 
 ```vue
 <number-roll
