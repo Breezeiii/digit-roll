@@ -1,6 +1,6 @@
 ### digit-roll
 
-数字滚动组件，轻量级。
+数字滑动组件，巧妙的运用css3和vue特性完成动画效果。
 
 ### 安装
 
@@ -13,7 +13,7 @@ Vue.use(DigitRoll, { /* options全局默认参数 见props */});
 
 ### props
 
-```j s
+```js
 // v-model
 value: {
     type: Number,
