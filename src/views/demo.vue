@@ -20,7 +20,6 @@
 </template>
 
 <script>
-
 export default {
   name: "demo",
   data() {
@@ -68,15 +67,18 @@ export default {
     };
   },
   mounted() {
-    setInterval(() => {
-      for (var i in this.$data) {
-        var num = Math.random();
-        var count = Number((num * 100).toFixed(2));
-        num > 0.5
-          ? (this.$data[i].value += count)
-          : (this.$data[i].value -= count);
-      }
-    }, 2000);
+    var flag = true;
+    if (flag) {
+      setInterval(() => {
+        for (var i in this.$data) {
+          var num = Math.random();
+          var count = Number((num * 100).toFixed(2));
+          num > 0.5
+            ? (this.$data[i].value += count)
+            : (this.$data[i].value -= count);
+        }
+      }, 2000);
+    }
   },
 };
 </script>

@@ -1,5 +1,12 @@
 <template>
-  <span class="dr">
+  <span
+    class="dr"
+    :style="{
+      transitionDuration: getTime(duration),
+      transitionDelay: getTime(delay),
+      transitionTimingFunction: easing,
+    }"
+  >
     <template v-for="(item, index) in valueFormat">
       <span class="dr-item" :key="index">
         <span
@@ -18,9 +25,6 @@
             class="dr-scroll"
             :style="{
               transform: 'translateY(' + -item * 10 + '%)',
-              transitionDuration: getTime(duration),
-              transitionDelay: getTime(delay),
-              transitionTimingFunction: easing,
             }"
           >
             <span
@@ -173,11 +177,19 @@ $prefix: dr;
       visibility: visible;
     }
 
+    &,
+    & .#{$prefix}-scroll {
+      transition-property: all;
+      transition-duration: inherit;
+      transition-delay: inherit;
+      transition-timing-function: inherit;
+    }
+
     .#{$prefix}-scroll {
       position: absolute;
       top: 0;
       left: 0;
-      transition-property: all;
+
       transform: translateY(0);
     }
   }
