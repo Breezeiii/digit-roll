@@ -7,7 +7,7 @@ var DigitRoll = {
   model: {
     prop: "value",
     event: "change",
-  },
+  }, 
   props: {
     value: {
       type: Number,
