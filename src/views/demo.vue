@@ -20,13 +20,9 @@
 </template>
 
 <script>
-// import numberRoll from "@/components/digit-roll";
 
 export default {
   name: "demo",
-  components: {
-    // numberRoll,
-  },
   data() {
     return {
       num1: {
@@ -45,17 +41,17 @@ export default {
         delay: 600,
       },
       num4: {
-        value: 4444,
+        value: 4444.444,
         duration: 800,
         delay: 200,
       },
       num5: {
-        value: 55555,
+        value: 55555.555,
         duration: 1000,
         unit: "个",
       },
       num6: {
-        value: 666666,
+        value: 666666.666,
         duration: 1200,
         unit: "人",
       },

@@ -69,6 +69,7 @@ export default {
       default: DIGIT_FORMAT,
     },
     math: {
+      // 小数位取整函数
       // ceil:向上取整 floor:向下取整 round:四舍五入
       type: String,
       default: "round",

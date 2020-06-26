@@ -5,8 +5,8 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 
-import NumberRoll from "@/components";
-Vue.use(NumberRoll);
+import DigitRoll from "@/components";
+Vue.use(DigitRoll, { math: "floor" ,duration:2000});
 
 new Vue({
   router,

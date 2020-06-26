@@ -2,6 +2,15 @@
 
 数字滚动组件，轻量级。
 
+### 安装
+
+```js
+npm i digit-roll；
+
+import DigitRoll from "digit-roll";
+Vue.use(DigitRoll, { /* options全局默认参数 见props */});
+```
+
 ### props
 
 ```j s
