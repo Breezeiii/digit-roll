@@ -24,7 +24,9 @@
           <span
             class="dr-scroll"
             :style="{
-              transform: 'translateY(' + -item * 10 + '%)',
+              transform: loadStatus
+                ? 'translateY(' + -item * 10 + '%' + ')'
+                : '',
             }"
           >
             <span
@@ -137,9 +139,17 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      loadStatus: false,
+    };
   },
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("load", (event) => {
+        this.loadStatus = true;
+      });
+    });
+  },
   methods: {
     getTime(time) {
       return time ? `${parseFloat(time / 1000)}s` : time;
@@ -162,36 +172,6 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-$prefix: dr;
-
-.#{$prefix} {
-  display: inline-flex;
-  .#{$prefix}-item {
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-
-    .#{$prefix}-spacer {
-      opacity: 0;
-      visibility: visible;
-    }
-
-    &,
-    & .#{$prefix}-scroll {
-      transition-property: all;
-      transition-duration: inherit;
-      transition-delay: inherit;
-      transition-timing-function: inherit;
-    }
-
-    .#{$prefix}-scroll {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      transform: translateY(0);
-    }
-  }
-}
+<style scoped>
+@import url("./style/index.css");
 </style>
