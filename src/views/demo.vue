@@ -3,7 +3,7 @@
     <h3>数字滚动 demo</h3>
     <div>
       <template v-for="(item, key) in $data">
-        <div class="demo-item" :key="key">
+        <div :class="['demo-item', key]" :key="key">
           <digit-roll
             v-model="$data[key].value"
             :duration="$data[key].duration"
@@ -27,7 +27,7 @@ export default {
       num1: {
         value: 1,
         duration: 200,
-        delay: 200,
+        // delay: 200,
       },
       num2: {
         value: 22,
@@ -62,7 +62,7 @@ export default {
       num8: {
         value: 88888888,
         duration: 1600,
-        unit: "¥",
+        // unit: "¥",
       },
     };
   },
@@ -77,7 +77,7 @@ export default {
             ? (this.$data[i].value += count)
             : (this.$data[i].value -= count);
         }
-      }, 2000);
+      }, 5000);
     }
   },
 };
@@ -88,8 +88,8 @@ $base-ft: 16px;
 $radix: 6px;
 
 .demo {
-  width: 600px;
-  margin: 0 auto;
+  // width: 600px;
+  padding-left: 100px;
 
   .demo-item {
     margin-bottom: 30px;
@@ -101,7 +101,7 @@ $radix: 6px;
       display: inline-block;
     }
 
-    $colors: blue, #000, green, #f00, gray, #444, #faf, #f77;
+    $colors: blue, #000, green, #f00, gray, #444, #faf, #ffffff;
 
     @for $i from 1 through 8 {
       &:nth-child(#{$i}) {
@@ -111,6 +111,21 @@ $radix: 6px;
 
         .unit {
           font-size: $ft/2;
+        }
+      }
+    }
+
+    &.num8 {
+      ::v-deep {
+        .dr-spacer {
+          background-color: #0452ee;
+          margin: 0 4px;
+          padding: 0 6px;
+          border-radius: 4px;
+        }
+        .dr-radix-mark,
+        .dr-formatting-mark {
+          color: #0452ee;
         }
       }
     }

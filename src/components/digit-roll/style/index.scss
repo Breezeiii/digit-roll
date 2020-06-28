@@ -4,29 +4,28 @@ $prefix: dr;
   display: inline-flex;
   display: -webkit-inline-flex;
 
-  .#{$prefix}-item {
+  .#{$prefix}-spacer {
     position: relative;
     text-align: center;
     overflow: hidden;
 
-    .#{$prefix}-spacer {
+    .#{$prefix}-text {
       opacity: 0;
       visibility: visible;
     }
 
     &,
     & .#{$prefix}-scroll {
-      transition-property: all;
       transition-duration: inherit;
       transition-delay: inherit;
       transition-timing-function: inherit;
     }
 
     .#{$prefix}-scroll {
+      transition-property: all;
       position: absolute;
       top: 0;
       left: 0;
-
       transform: translateY(0);
     }
   }

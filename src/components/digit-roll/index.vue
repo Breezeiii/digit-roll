@@ -8,25 +8,27 @@
     }"
   >
     <template v-for="(item, index) in valueFormat">
-      <span class="dr-item" :key="index">
-        <span
-          :class="[
-            /\d+/.test(item)
-              ? 'dr-spacer'
-              : item == '.'
-              ? 'dr-radix-mark'
-              : 'dr-formatting-mark',
-          ]"
-        >
+      <span
+        :key="index"
+        :class="[
+          'dr-element',
+          /\d+/.test(item)
+            ? 'dr-spacer'
+            : item == '.'
+            ? 'dr-radix-mark'
+            : 'dr-formatting-mark',
+        ]"
+      >
+        <span class="dr-text">
           {{ item }}
         </span>
         <template v-if="/\d+/.test(item)">
           <span
             class="dr-scroll"
             :style="{
-              transform: loadStatus
+              transform: state
                 ? 'translateY(' + -item * 10 + '%' + ')'
-                : '',
+                : 'translteY(0)',
             }"
           >
             <span
@@ -44,6 +46,8 @@
 </template>
 
 <script>
+import _ from "./utils";
+
 let DIGIT_FORMAT = "(,ddd).dd";
 let FORMAT_PARSER = /^\(?([^)]*)\)?(?:(.)(d+))?$/;
 
@@ -138,18 +142,24 @@ export default {
       return _arr;
     },
   },
+  watch: {
+    // 维护state，初始、新生成的dom有动画
+    valueFormat: {
+      handler(nVal, oVal) {
+        this.state = false;
+        _.debounce(() => {
+          this.state = true;
+        }, 0)();
+      },
+      immediate: true,
+    },
+  },
   data() {
     return {
-      loadStatus: false,
+      state: false,
     };
   },
-  mounted() {
-    this.$nextTick(() => {
-      window.addEventListener("load", (event) => {
-        this.loadStatus = true;
-      });
-    });
-  },
+  mounted() {},
   methods: {
     getTime(time) {
       return time ? `${parseFloat(time / 1000)}s` : time;

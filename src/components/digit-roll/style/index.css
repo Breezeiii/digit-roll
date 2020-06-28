@@ -3,26 +3,26 @@
   display: -webkit-inline-flex;
 }
 
-.dr .dr-item {
+.dr .dr-spacer {
   position: relative;
   text-align: center;
   overflow: hidden;
 }
 
-.dr .dr-item .dr-spacer {
+.dr .dr-spacer .dr-text {
   opacity: 0;
   visibility: visible;
 }
 
-.dr .dr-item,
-.dr .dr-item .dr-scroll {
-  transition-property: all;
+.dr .dr-spacer,
+.dr .dr-spacer .dr-scroll {
   transition-duration: inherit;
   transition-delay: inherit;
   transition-timing-function: inherit;
 }
 
-.dr .dr-item .dr-scroll {
+.dr .dr-spacer .dr-scroll {
+  transition-property: all;
   position: absolute;
   top: 0;
   left: 0;

@@ -60,3 +60,9 @@ https://liuhaifengzzzzz.github.io/digit-roll
 </digit-roll>
 ```
 
+### 主题
+
+```text
+主题通过css类修改组件样式，文字大小、文字颜色、背景颜色等
+```
+
