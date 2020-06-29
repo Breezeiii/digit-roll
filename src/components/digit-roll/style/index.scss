@@ -4,24 +4,24 @@ $prefix: dr;
   display: inline-flex;
   display: -webkit-inline-flex;
 
-  .#{$prefix}-spacer {
+  .#{$prefix}-digit {
     position: relative;
     text-align: center;
     overflow: hidden;
 
-    .#{$prefix}-text {
+    .#{$prefix}-spacer {
       opacity: 0;
       visibility: visible;
     }
 
     &,
-    & .#{$prefix}-scroll {
+    & .#{$prefix}-roll {
       transition-duration: inherit;
       transition-delay: inherit;
       transition-timing-function: inherit;
     }
 
-    .#{$prefix}-scroll {
+    .#{$prefix}-roll {
       transition-property: all;
       position: absolute;
       top: 0;

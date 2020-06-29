@@ -117,7 +117,7 @@ $radix: 6px;
 
     &.num8 {
       ::v-deep {
-        .dr-spacer {
+        .dr-digit {
           background-color: #0452ee;
           margin: 0 4px;
           padding: 0 6px;

@@ -13,18 +13,18 @@
         :class="[
           'dr-element',
           /\d+/.test(item)
-            ? 'dr-spacer'
+            ? 'dr-digit'
             : item == '.'
             ? 'dr-radix-mark'
             : 'dr-formatting-mark',
         ]"
       >
-        <span class="dr-text">
+        <span class="dr-spacer">
           {{ item }}
         </span>
         <template v-if="/\d+/.test(item)">
           <span
-            class="dr-scroll"
+            class="dr-roll"
             :style="{
               transform: state
                 ? 'translateY(' + -item * 10 + '%' + ')'
@@ -32,7 +32,7 @@
             }"
           >
             <span
-              class="dr-scroll-item"
+              class="dr-roll-element"
               v-for="(_item, _index) in 10"
               :key="_index"
             >

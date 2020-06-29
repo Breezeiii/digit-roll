@@ -3,25 +3,25 @@
   display: -webkit-inline-flex;
 }
 
-.dr .dr-spacer {
+.dr .dr-digit {
   position: relative;
   text-align: center;
   overflow: hidden;
 }
 
-.dr .dr-spacer .dr-text {
+.dr .dr-digit .dr-spacer {
   opacity: 0;
   visibility: visible;
 }
 
-.dr .dr-spacer,
-.dr .dr-spacer .dr-scroll {
+.dr .dr-digit,
+.dr .dr-digit .dr-roll {
   transition-duration: inherit;
   transition-delay: inherit;
   transition-timing-function: inherit;
 }
 
-.dr .dr-spacer .dr-scroll {
+.dr .dr-digit .dr-roll {
   transition-property: all;
   position: absolute;
   top: 0;
