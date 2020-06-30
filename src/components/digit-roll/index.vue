@@ -149,7 +149,7 @@ export default {
         this.state = false;
         _.debounce(() => {
           this.state = true;
-        }, 0)();
+        }, 1)();
       },
       immediate: true,
     },

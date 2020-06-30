@@ -69,7 +69,7 @@ export default {
   mounted() {
     var flag = true;
     if (flag) {
-      setInterval(() => {
+      setTimeout(() => {
         for (var i in this.$data) {
           var num = Math.random();
           var count = Number((num * 100).toFixed(2));
