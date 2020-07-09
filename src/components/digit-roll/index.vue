@@ -14,7 +14,7 @@
           'dr-element',
           /\d+/.test(item)
             ? 'dr-digit'
-            : item == '.'
+            : item == resetFormat.radix
             ? 'dr-radix-mark'
             : 'dr-formatting-mark',
         ]"
@@ -96,7 +96,6 @@ export default {
       };
     },
     valueFormat() {
-      console.log(this.resetFormat);
       const WFLAG = true;
       let repeating = this.resetFormat.repeating;
       let _arr = [];
@@ -131,7 +130,6 @@ export default {
 
               let chr = repeating[repeating.length - 1];
               repeating = repeating.substring(0, repeating.length - 1);
-              console.log(repeating);
               if (chr === "d") {
                 break;
               }
