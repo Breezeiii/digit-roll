@@ -20,7 +20,7 @@
         ]"
       >
         <span class="dr-spacer">
-          {{ item }}
+          {{ /\d+/.test(item) ? 8 : item }}
         </span>
         <template v-if="/\d+/.test(item)">
           <span
@@ -96,48 +96,53 @@ export default {
       };
     },
     valueFormat() {
+      console.log(this.resetFormat);
       const WFLAG = true;
       let repeating = this.resetFormat.repeating;
-      let radixFlag = false;
       let _arr = [];
-
-      this.createRound(this.math)(this.value, this.resetFormat.precision)
+      let initArr = this.createRound(this.math)(
+        this.value,
+        this.resetFormat.precision
+      )
         .toString()
         .split("")
-        .reverse()
-        .forEach((item) => {
-          let flag = false;
+        .reverse();
 
-          if (item == ".") {
-            radixFlag = true;
-            _arr.unshift(item);
-          } else {
-            if (radixFlag) {
-              flag = false;
+      let radixFlag = !initArr.includes(this.resetFormat.radix);
 
-              while (WFLAG) {
-                if (!repeating.length) {
-                  if (flag) {
-                    throw new Error("Bad odometer format without digits");
-                  }
-                  repeating = this.resetFormat.repeating;
-                  flag = true;
+      initArr.forEach((item) => {
+        let flag = false;
+
+        if (item == this.resetFormat.radix) {
+          radixFlag = true;
+          _arr.unshift(item);
+        } else {
+          if (radixFlag) {
+            flag = false;
+
+            while (WFLAG) {
+              if (!repeating.length) {
+                if (flag) {
+                  throw new Error("Bad odometer format without digits");
                 }
-
-                let chr = repeating[repeating.length - 1];
-                repeating = repeating.substring(0, repeating.length - 1);
-
-                if (chr === "d") {
-                  break;
-                }
-
-                _arr.unshift(chr);
+                repeating = this.resetFormat.repeating;
+                flag = true;
               }
-            }
 
-            _arr.unshift(item);
+              let chr = repeating[repeating.length - 1];
+              repeating = repeating.substring(0, repeating.length - 1);
+              console.log(repeating);
+              if (chr === "d") {
+                break;
+              }
+
+              _arr.unshift(chr);
+            }
           }
-        });
+
+          _arr.unshift(item);
+        }
+      });
 
       return _arr;
     },
