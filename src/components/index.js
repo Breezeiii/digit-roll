@@ -1,7 +1,7 @@
 import DigitRoll from "./digit-roll";
 
 export default {
-  install: (Vue, options) => {
+  install: (Vue, options = {}) => {
     for (var key in DigitRoll.props) {
       options[key] && (DigitRoll.props[key].default = options[key]);
     }
