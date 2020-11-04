@@ -106,6 +106,7 @@ export default {
         .toString()
         .split("")
         .reverse();
+      if (this.value < 0) initArr = initArr.slice(0, -1);
 
       let radixFlag = !initArr.includes(this.resetFormat.radix);
 
@@ -142,6 +143,7 @@ export default {
         }
       });
 
+      if (this.value < 0) _arr.unshift("-");
       return _arr;
     },
   },

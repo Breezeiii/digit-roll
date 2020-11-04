@@ -59,15 +59,20 @@ export default {
         duration: 1400,
         unit: "幢",
       },
+      // num8: {
+      //   value: 88888888,
+      //   duration: 1600,
+      //   // unit: "¥",
+      // },
       num8: {
-        value: 88888888,
+        value: 1000000,
         duration: 1600,
         // unit: "¥",
       },
     };
   },
   mounted() {
-    var flag = true;
+    var flag = false;
     if (flag) {
       setTimeout(() => {
         for (var i in this.$data) {
