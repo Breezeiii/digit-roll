@@ -30,7 +30,7 @@ export default {
         // delay: 200,
       },
       num2: {
-        value: 22,
+        value: -222222,
         duration: 400,
         delay: 400,
       },
@@ -59,20 +59,15 @@ export default {
         duration: 1400,
         unit: "幢",
       },
-      // num8: {
-      //   value: 88888888,
-      //   duration: 1600,
-      //   // unit: "¥",
-      // },
       num8: {
-        value: 1000000,
+        value: 88888888,
         duration: 1600,
         // unit: "¥",
       },
     };
   },
   mounted() {
-    var flag = false;
+    var flag = true;
     if (flag) {
       setTimeout(() => {
         for (var i in this.$data) {
