@@ -11,6 +11,9 @@ import DigitRoll from "digit-roll";
 Vue.use(DigitRoll, { /* options全局默认参数 见props */});
 ```
 
+### 示范
+Demo: https://codesandbox.io/s/github/LIUHAIFENGzzzzz/digit-roll
+
 ### props
 
 ```js
